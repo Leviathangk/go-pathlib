@@ -1,6 +1,11 @@
 # pathlib
 一个类似 python 标准库的路径处理模块
 
+# 安装
+```
+go get github.com/Leviathangk/go-pathlib@latest
+```
+
 # 使用
 方法请查看源码
 
