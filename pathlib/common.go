@@ -11,11 +11,8 @@ import (
 // Exists 判断路径是否存在
 func (p *Parser) Exists() bool {
 	_, err := p.Info()
-	if err != nil {
-		return false
-	}
 
-	return true
+	return err == nil
 }
 
 // Info 获取详情
