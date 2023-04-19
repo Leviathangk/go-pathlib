@@ -44,7 +44,7 @@ func (p *Parser) walkDir(f WalkFunc) error {
 		}
 
 		// 构造新 Path
-		newPath := New(p.Join(names[0]).Path)
+		newPath := p.Join(names[0])
 
 		// 读完立即处理
 		err = f(newPath, err)
