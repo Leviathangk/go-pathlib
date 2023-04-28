@@ -86,6 +86,16 @@ func (p *Parser) MkdirAll(mode os.FileMode) error {
 	return os.MkdirAll(p.Path, mode)
 }
 
+// Create 创建文件
+func (p *Parser) Create() (*os.File, error) {
+	return os.OpenFile(p.Path, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0666)
+}
+
+// OpenFile 打开文件
+func (p *Parser) OpenFile(name string, flag int, perm os.FileMode) (*os.File, error) {
+	return os.OpenFile(name, flag, perm)
+}
+
 // MoveTo 移动：包含路径及名字（名字不一样会被重命名）
 // toPath：全路径，含有名字
 // override 是否存在即覆盖，为 false 时，重复将会报 err
